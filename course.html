@@ -35,15 +35,40 @@
     <main>
         <div class="container mt-5 col-6">
         <div class="input-group mb-3">
-            <input type="text" class="form-control" placeholder="Chapter Name" aria-label="Recipient's username" aria-describedby="button-addon2">
+            <input type="text" class="form-control" placeholder="Chapter Name"  id="myText">
             <div class="input-group-append">
-              <button class="btn btn-outline-secondary" type="button" id="button-addon2">Add</button>
+              <button id="add_btn" class="btn btn-outline-secondary" type="button" id=" button-addon2">Add</button>
             </div>
         </div>
-        <ul class="list-group">
-            <li class="list-group-item">An item</li>
-      
+        <ul id="parentList" class="list-group">
+            <li class="list-group-item d-flex just justify-content-between">
+                <h3 class="flex-grow-1">Chapter 1</h3>
+                 <button class="btn btn-warning mx-3">Edit</button>
+                 <button class="btn btn-danger">Remove</button>
+
+                </li>
           </ul>
     </main>
+
+
+    <script>
+        let addBtn = document.getElementById('add_btn')
+        addBtn.addEventListener('click', addChapter)
+        function addChapter(e){
+let currentBtn = e.currentTarget;
+let myName = document.getElementById("myText").value;
+let  currentChapter = myName
+
+let newLi = document.createElement  ('li')
+newLi.classList.add('list-group-item')
+newLi.innerHTML =`
+<h3 class="flex-grow-1">${currentChapter}</h3>
+                 <button class="btn btn-warning mx-3">Edit</button>
+                 <button class="btn btn-danger">Remove</button>
+`
+let parentList = document.getElementById('parentList')
+parentList.appendChild(newLi)
+}   
+    </script>
 </body>
 </html>
