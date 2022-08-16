@@ -95,9 +95,9 @@
         currElement.textContent = "Edit"
         let currentChapterName = currElement.previousElementSibling.value;
         let currHeading = document.createElement('h3');
-currHeading.className = "flex-grow-1"
-currHeading.textContent = currentChapterName
-currElement.parentElement.replaceChild(currHeading, currElement.previousElementSibling)
+        currHeading.className = "flex-grow-1"
+        currHeading.textContent = currentChapterName
+        currElement.parentElement.replaceChild(currHeading, currElement.previousElementSibling)
 
       } else {
         currElement.textContent = "Done"
@@ -109,7 +109,6 @@ currElement.parentElement.replaceChild(currHeading, currElement.previousElementS
         currInput.value = currentChapterName
         currElement.parentElement.replaceChild(currInput, currElement.previousElementSibling)
       }
-
     }
   </script>
 </body>
